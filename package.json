@@ -12,6 +12,7 @@
     "@types/node": "^9.6.6",
     "@types/react": "16.3.12",
     "@types/react-dom": "16.0.5",
+    "@types/react-helmet": "^5.0.5",
     "caniuse-db": "^1.0.30000652",
     "gatsby": "^1.9.253",
     "gatsby-link": "^1.6.41",
