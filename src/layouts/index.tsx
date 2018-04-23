@@ -4,7 +4,8 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 
-import './index.css'
+import 'normalize.css'
+import './site.css'
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
