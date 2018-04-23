@@ -1,33 +1,27 @@
 {
-  "name": "gatsby-starter-typescript",
-  "description": "Gatsby TypeScript starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "@types/node": "^8.0.7",
-    "@types/react": "15.0.21",
-    "@types/react-dom": "0.14.23",
-    "gatsby": "^1.9.119",
-    "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-typescript": "^1.4.10"
-  },
-  "keywords": [
-    "gatsby, typescript"
-  ],
-  "license": "MIT",
-  "main": "n/a",
+  "name": "alex-codes",
+  "description": "Alex Wild's portfolio website (alex.codes)",
+  "private": true,
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "prettier": "^1.8.2"
+  "dependencies": {
+    "@types/node": "^9.6.6",
+    "@types/react": "16.3.12",
+    "@types/react-dom": "16.0.5",
+    "caniuse-db": "^1.0.30000652",
+    "gatsby": "^1.9.253",
+    "gatsby-link": "^1.6.41",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-typescript": "^1.4.20",
+    "react": "^16.3.2",
+    "react-helmet": "^5.2.0",
+    "webpack": "^4.6.0"
   },
-  "contributors": [
-    "fabien0102 <fabien0102@gmail.com>",
-    "Hays Clark <hays.clark@gmail.com>"
-  ]
+  "devDependencies": {
+    "prettier": "^1.12.1"
+  }
 }
