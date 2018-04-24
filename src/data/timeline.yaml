@@ -1,0 +1,53 @@
+- date: January 2018 - Present
+  type: work
+  title: Full Stack Web Developer
+  subtitle: Freelance, Vancouver
+  description:
+    In recent months I have worked on a small number of tasks for previous
+    employers. I have also created a website (ichallenge.club) which
+    integrates with the Strava API and allows users to set their own
+    running or cycling goals. The primary aim of developing this website
+    was to learn new frameworks and improve my knowledge of the AWS
+    ecosystem.
+
+- date: September 2014 to December 2017
+  type: work
+  title: Software Engineer
+  subtitle: React Group, EPFL, Lausanne
+  description:
+    I was the lead developer of the Graasp social media platform
+    (graasp.eu) and SpeakUp web app (speakup.info). Apart from
+    development, this role involved mentoring students and interns, and
+    reviewing the code of team members. There were also a number of Linux
+    and Mac system administration tasks, including migrating services to
+    new rack servers.
+
+- date: August 2013 to February 2014
+  type: work
+  title: Mobile Web Developer
+  subtitle: Amplifier Agency, Melbourne
+  description:
+    This role involved working as part of a team of developers at a
+    startup. My main task was to automate the creation of mobile web apps
+    from data provided by the authoring platform (shareableapps.com). We
+    also created a number of bespoke web apps for clients.
+
+- date: July 2013 to February 2018
+  type: work
+  title: Freelance Web Developer
+  subtitle: Juggler Design, Melbourne
+  description:
+    I have created many websites with the Juggler Design agency
+    (juggler.com.au), most of which were powered by WordPress. The
+    majority of the work involved creating new themes based on Photoshop
+    templates provided by the designer.
+
+- date: October 2011 to October 2012
+  type: work
+  title: Front-end Web Developer
+  subtitle: The Safe Shop, Preston
+  description:
+    At The Safe Shop (now safe.co.uk) I worked in a small team, as the
+    front-end developer, on a custom-built PHP website. During my time there we
+    redesigned the whole front-end. I also used Photoshop for editing
+    promotional banner and product image retouching.

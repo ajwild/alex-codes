@@ -1,14 +1,28 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
-// Please note that you can use https://github.com/dotansimha/graphql-code-generator
-// to generate all types from graphQL schema
+import Timeline from '../components/Timeline'
+
 interface IndexPageProps {
   data: {
     site: {
       siteMetadata: {
         title: string
       }
+    }
+
+    allTimelineYaml: {
+      edges: [
+        {
+          node: {
+            date: string
+            type: string
+            title: string
+            subtitle: string
+            description: string
+          }
+        }
+      ]
     }
   }
 }
@@ -17,16 +31,11 @@ export default class extends React.Component<IndexPageProps, {}> {
   constructor(props: IndexPageProps, context: any) {
     super(props, context)
   }
+
   public render() {
     return (
       <div>
-        <h1>Hi people</h1>
-        <p>
-          Welcome to your new{' '}
-          <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-        </p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
+        <Timeline elements={this.props.data.allTimelineYaml.edges} />
       </div>
     )
   }
@@ -37,6 +46,18 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    allTimelineYaml {
+      edges {
+        node {
+          date
+          type
+          title
+          subtitle
+          description
+        }
       }
     }
   }
