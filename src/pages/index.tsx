@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
+import Contact from '../components/Contact'
 import Timeline from '../components/Timeline'
 
 interface IndexPageProps {
@@ -36,6 +37,7 @@ export default class extends React.Component<IndexPageProps, {}> {
     return (
       <div>
         <Timeline elements={this.props.data.allTimelineYaml.edges} />
+        <Contact />
       </div>
     )
   }
