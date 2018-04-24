@@ -21,7 +21,7 @@ interface TimelineComponentProps {
 }
 
 export default ({ elements: timelineActivities }: TimelineComponentProps) => (
-  <VerticalTimeline>
+  <VerticalTimeline animate={false}>
     {timelineActivities.map(activity => {
       return (
         <TimelineElement element={activity.node} key={activity.node.title} />

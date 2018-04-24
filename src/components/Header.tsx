@@ -2,12 +2,7 @@ import * as React from 'react'
 import Link from 'gatsby-link'
 
 export default () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
+  <div style={{ background: 'rebeccapurple' }}>
     <div
       style={{
         margin: '0 auto',
