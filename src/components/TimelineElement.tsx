@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component'
-import WorkIcon from '@material-ui/icons/Work'
+import { Work as WorkIcon } from '@material-ui/icons'
 
 interface TimelineComponentProps {
   element: {
