@@ -1,10 +1,8 @@
 - date: January 2018 - Present
-  type: work
-  title: Full Stack Web Developer
-  subtitle: Freelance, Vancouver
+  type: project
+  title: I Challenge...
   description:
-    In recent months I have worked on a small number of tasks for previous
-    employers. I have also created a website (ichallenge.club) which
+    In recent months I have created a website (ichallenge.club) which
     integrates with the Strava API and allows users to set their own
     running or cycling goals. The primary aim of developing this website
     was to learn new frameworks and improve my knowledge of the AWS
@@ -42,6 +40,15 @@
     majority of the work involved creating new themes based on Photoshop
     templates provided by the designer.
 
+- date: November 2011 to December 2011
+  type: project
+  title: Crème Anglaise
+  description:
+    The website was created using WordPress, and the theme is a heavily
+    modified version of the Twenty Twelve theme. A large number of
+    customisations were added to the theme functions, and a few standard
+    plugins were also used.
+
 - date: October 2011 to October 2012
   type: work
   title: Front-end Web Developer
@@ -51,3 +58,12 @@
     front-end developer, on a custom-built PHP website. During my time there we
     redesigned the whole front-end. I also used Photoshop for editing
     promotional banner and product image retouching.
+
+- date: September 2004 to May 2007
+  type: education
+  title: "BSc (Hons): Media Production and Technology"
+  subtitle: University of Central Lancashire, Preston
+  description:
+    My course covered a variety of subjects including web development, graphic
+    design, video editing, video production, and audio production. I wrote my
+    dissertation on CSS design and cross-browser compatibility.
