@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
+import About from '../components/About'
 import Contact from '../components/Contact'
 import Timeline from '../components/Timeline'
 
@@ -35,10 +36,11 @@ export default class extends React.Component<IndexPageProps, {}> {
 
   public render() {
     return (
-      <div>
+      <React.Fragment>
+        <About />
         <Timeline elements={this.props.data.allTimelineYaml.edges} />
         <Contact />
-      </div>
+      </React.Fragment>
     )
   }
 }

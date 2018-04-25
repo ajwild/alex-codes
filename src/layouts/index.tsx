@@ -30,8 +30,7 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
           style={{
             margin: '0 auto',
             maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
+            padding: '2rem 1rem',
           }}
         >
           {this.props.children()}
