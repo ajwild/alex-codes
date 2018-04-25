@@ -1,26 +1,18 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-export default () => (
-  <div style={{ background: 'rebeccapurple' }}>
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '2rem 1rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+import Segment from './Segment'
+
+export default () => {
+  const Subtitle = styled('h2')`
+    margin-bottom: 0;
+  `
+
+  return (
+    <Segment background="#fff">
+      <h1>Alex Wild</h1>
+      <Subtitle>Full Stack JS Developer</Subtitle>
+      <Subtitle>Vancouver, BC, Canada</Subtitle>
+    </Segment>
+  )
+}
