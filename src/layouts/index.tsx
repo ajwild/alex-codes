@@ -8,23 +8,14 @@ import 'normalize.css'
 import './site.css'
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
-  location: {
-    pathname: string
-  }
   children: any
 }
 
 class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
   public render() {
     return (
-      <div>
-        <Helmet
-          title="Gatsby Default Starter"
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+      <React.Fragment>
+        <Helmet title="alex.codes" />
         <Header />
         <div
           style={{
@@ -35,7 +26,7 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
         >
           {this.props.children()}
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

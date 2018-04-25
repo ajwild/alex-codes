@@ -7,12 +7,6 @@ import Timeline from '../components/Timeline'
 
 interface IndexPageProps {
   data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-
     allTimelineYaml: {
       edges: [
         {
@@ -47,12 +41,6 @@ export default class extends React.Component<IndexPageProps, {}> {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
     allTimelineYaml {
       edges {
         node {
