@@ -3,6 +3,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

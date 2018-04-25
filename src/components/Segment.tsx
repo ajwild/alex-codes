@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 interface Segment {
   children: JSX.Element | JSX.Element[]
-  background: string
+  background?: string
 }
 
 export default ({ children, background }: Segment) => {
@@ -12,8 +12,10 @@ export default ({ children, background }: Segment) => {
   `
 
   const Container = styled('div')`
-    margin: 0 auto;
+    position: relative;
+    z-index: 0;
     max-width: 60rem;
+    margin: 0 auto;
     padding: 1.5rem;
   `
 

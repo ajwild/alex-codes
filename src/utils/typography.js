@@ -53,7 +53,7 @@ const typography = new Typography({
       ...adjustFontSizeTo('3rem', 2),
     },
     h2: {
-      ...adjustFontSizeTo('1.2rem', 2),
+      ...adjustFontSizeTo('1.2rem', 1),
     },
     h3: {
       ...adjustFontSizeTo('1.2rem', 1),
@@ -63,21 +63,21 @@ const typography = new Typography({
     },
     [MIN_MOBILE_MEDIA_QUERY]: {
       h1: {
-        ...adjustFontSizeTo('5rem', 4),
+        ...adjustFontSizeTo('4rem', 3),
       },
       h2: {
-        ...adjustFontSizeTo('2rem', 2),
+        ...adjustFontSizeTo('1.6rem', 2),
       },
       h3: {
-        ...adjustFontSizeTo('2rem', 2),
+        ...adjustFontSizeTo('1.6rem', 2),
       },
     },
     [MIN_TABLET_MEDIA_QUERY]: {
       h1: {
-        ...adjustFontSizeTo('7rem', 6),
+        ...adjustFontSizeTo('6rem', 5),
       },
       h2: {
-        ...adjustFontSizeTo('2.8rem', 3),
+        ...adjustFontSizeTo('2.4rem', 2),
       },
       h3: {
         ...adjustFontSizeTo('2rem', 2),

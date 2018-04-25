@@ -19,6 +19,7 @@
     "caniuse-db": "^1.0.30000652",
     "gatsby": "^1.9.253",
     "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-svgr": "^1.0.0",
     "gatsby-plugin-typescript": "^1.4.20",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.33",
