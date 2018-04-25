@@ -1,72 +1,182 @@
 import * as React from 'react'
-import { VerticalTimelineElement } from 'react-vertical-timeline-component'
+import styled from 'styled-components'
+import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
   Code as CodeIcon,
   School as SchoolIcon,
-  Work as WorkIcon,
+  Business as BusinessIcon,
 } from '@material-ui/icons'
 
 interface TimelineComponentProps {
   element: {
     date: string
-    type: string
+    type?: string
     title: string
-    subtitle: string
+    subtitle?: string
     description: string
   }
 }
 
+const iconStyle = {
+  background: '#fff',
+  color: 'rgba(0, 0, 0, 0.54)',
+}
+
 const educationIconProps = {
-  icon: <SchoolIcon />,
-  iconStyle: {
-    background: 'orange',
-    color: '#fff',
-  },
+  icon: SchoolIcon,
+  iconStyle,
 }
 
 const projectIconProps = {
-  icon: <CodeIcon />,
-  iconStyle: {
-    background: 'green',
-    color: '#fff',
-  },
+  icon: CodeIcon,
+  iconStyle,
 }
 
 const workIconProps = {
-  icon: <WorkIcon />,
-  iconStyle: {
-    background: 'blue',
-    color: '#fff',
-  },
+  icon: BusinessIcon,
+  iconStyle,
 }
 
 export default ({
   element: { date, type, title, subtitle, description },
 }: TimelineComponentProps) => {
-  const iconProps = {}
+  let TimelineIcon
 
   switch (type) {
     case 'education': {
-      Object.assign(iconProps, educationIconProps)
+      TimelineIcon = SchoolIcon
       break
     }
     case 'project': {
-      Object.assign(iconProps, projectIconProps)
+      TimelineIcon = CodeIcon
       break
     }
     case 'work': {
-      Object.assign(iconProps, workIconProps)
+      TimelineIcon = BusinessIcon
       break
     }
   }
 
+  const TimelineElement = styled('div')`
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      left: -0.75rem;
+      right: auto;
+      height: 0;
+      width: 0;
+      border-top: 0.75rem solid transparent;
+      border-bottom: 0.75rem solid transparent;
+      border-left: none;
+      border-right: 0.75rem solid #fff;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    ${MIN_TABLET_MEDIA_QUERY} {
+      width: 45%;
+      width: calc(50% - 3rem);
+      margin-left: 0;
+
+      div {
+        position: absolute;
+        top: 0.75rem;
+        height: 3rem;
+        width: 3rem;
+      }
+
+      h4:last-of-type {
+        position: absolute;
+        top: 1.5rem;
+        width: 100%;
+      }
+
+      :nth-of-type(odd) {
+        &:before {
+          left: auto;
+          right: -0.75rem;
+          border-left: 0.75rem solid #fff;
+          border-right: none;
+        }
+
+        div {
+          left: calc(100% + 1.5rem);
+        }
+
+        h4:last-of-type {
+          left: calc(100% + 6rem);
+        }
+      }
+
+      :nth-of-type(even) {
+        margin-left: 55%;
+        margin-left: calc(50% + 3rem);
+
+        div {
+          right: calc(100% + 1.5rem);
+        }
+
+        h4:last-of-type {
+          right: calc(100% + 6rem);
+          text-align: right;
+        }
+      }
+    }
+  `
+
+  const TimelineTitle = styled('h3')`
+    margin-right: 3rem;
+  `
+
+  const TimelineSubtitle = styled('h4')`
+    margin-bottom: 0;
+
+    ${MIN_TABLET_MEDIA_QUERY} {
+      margin-bottom: 1.5rem;
+    }
+  `
+
+  const TimelineDate = styled('h4')`
+    color: #666;
+
+    ${MIN_TABLET_MEDIA_QUERY} {
+      color: #333;
+    }
+  `
+
+  const TimelineIconWrapper = styled('div')`
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #666;
+
+    ${MIN_TABLET_MEDIA_QUERY} {
+      padding: 0.75rem;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  `
+
   return (
-    <VerticalTimelineElement date={date} {...iconProps}>
-      <h3 className="vertical-timeline-element-title">{title}</h3>
-      {subtitle && (
-        <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
+    <TimelineElement>
+      {TimelineIcon && (
+        <TimelineIconWrapper>
+          <TimelineIcon />
+        </TimelineIconWrapper>
       )}
+      <TimelineTitle>{title}</TimelineTitle>
+      {subtitle && <TimelineSubtitle>{subtitle}</TimelineSubtitle>}
+      <TimelineDate>{date}</TimelineDate>
       <p>{description}</p>
-    </VerticalTimelineElement>
+    </TimelineElement>
   )
 }

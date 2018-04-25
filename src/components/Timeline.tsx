@@ -1,10 +1,9 @@
 import * as React from 'react'
-import { VerticalTimeline } from 'react-vertical-timeline-component'
+import styled from 'styled-components'
+import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
+import Segment from './Segment'
 import TimelineElement from './TimelineElement'
-
-import 'react-vertical-timeline-component/style.min.css'
-import './Timeline.css'
 
 interface TimelineComponentProps {
   elements: [
@@ -20,12 +19,37 @@ interface TimelineComponentProps {
   ]
 }
 
-export default ({ elements: timelineActivities }: TimelineComponentProps) => (
-  <VerticalTimeline animate={false}>
-    {timelineActivities.map(activity => {
-      return (
-        <TimelineElement element={activity.node} key={activity.node.title} />
-      )
-    })}
-  </VerticalTimeline>
-)
+export default ({ elements: timelineActivities }: TimelineComponentProps) => {
+  const Timeline = styled('div')`
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 1.5rem;
+      z-index: -1;
+      width: 0.25rem;
+      margin-left: -0.125rem;
+      background: #eee;
+
+      ${MIN_TABLET_MEDIA_QUERY} {
+        left: 50%;
+      }
+    }
+  `
+
+  return (
+    <Segment>
+      <Timeline>
+        {timelineActivities.map(activity => {
+          return (
+            <TimelineElement
+              element={activity.node}
+              key={activity.node.title}
+            />
+          )
+        })}
+      </Timeline>
+    </Segment>
+  )
+}

@@ -25,16 +25,16 @@ const typography = new Typography({
     },
     {
       name: bodyFont,
-      styles: ['400', '700'],
+      styles: ['300', '400', '500'],
     },
   ],
   headerFontFamily: bodyFontFamily,
   bodyFontFamily,
-  headerColor: '#666',
-  bodyColor: '#333',
-  headerWeight: 400,
+  headerColor: '#333',
+  bodyColor: '#444',
+  headerWeight: 500,
   bodyWeight: 400,
-  boldWeight: 700,
+  boldWeight: 500,
   blockMarginBottom: 1,
   includeNormalize: true,
   roundToNearestHalfLine: false,
@@ -57,6 +57,9 @@ const typography = new Typography({
     },
     h3: {
       ...adjustFontSizeTo('1.2rem', 1),
+    },
+    h4: {
+      ...adjustFontSizeTo('1rem', 1),
     },
     'p:last-child': {
       marginBottom: 0,
