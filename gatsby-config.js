@@ -4,6 +4,7 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-svgr`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
