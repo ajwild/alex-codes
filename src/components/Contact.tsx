@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
-import { Send as SendIcon } from '@material-ui/icons'
+import { MdSend as SendIcon } from 'react-icons/lib/md'
 
 import Segment from './Segment'
 import TextField from './TextField'
@@ -58,6 +58,7 @@ const SubmitButton = styled('button')`
 
 const SubmitIcon = styled(SendIcon)`
   margin-left: 0.75rem;
+  color: #666;
 `
 
 const FormFeedback = styled('div')`

@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
-  Code as CodeIcon,
-  School as SchoolIcon,
-  Business as BusinessIcon,
-} from '@material-ui/icons'
+  FaGraduationCap as EducationIcon,
+  FaBuildingO as WorkIcon,
+  FaCode as ProjectIcon,
+} from 'react-icons/lib/fa'
 
 interface TimelineComponentProps {
   element: {
@@ -17,26 +17,6 @@ interface TimelineComponentProps {
   }
 }
 
-const iconStyle = {
-  background: '#fff',
-  color: 'rgba(0, 0, 0, 0.54)',
-}
-
-const educationIconProps = {
-  icon: SchoolIcon,
-  iconStyle,
-}
-
-const projectIconProps = {
-  icon: CodeIcon,
-  iconStyle,
-}
-
-const workIconProps = {
-  icon: BusinessIcon,
-  iconStyle,
-}
-
 export default ({
   element: { date, type, title, subtitle, description },
 }: TimelineComponentProps) => {
@@ -44,15 +24,15 @@ export default ({
 
   switch (type) {
     case 'education': {
-      TimelineIcon = SchoolIcon
+      TimelineIcon = EducationIcon
       break
     }
     case 'project': {
-      TimelineIcon = CodeIcon
+      TimelineIcon = ProjectIcon
       break
     }
     case 'work': {
-      TimelineIcon = BusinessIcon
+      TimelineIcon = WorkIcon
       break
     }
   }
@@ -93,7 +73,7 @@ export default ({
         width: 3rem;
       }
 
-      h4:last-of-type {
+      h6 {
         position: absolute;
         top: 1.5rem;
         width: 100%;
@@ -114,7 +94,7 @@ export default ({
           left: calc(100% + 1.5rem);
         }
 
-        h4:last-of-type {
+        h6 {
           left: 130%;
           left: calc(100% + 6rem);
         }
@@ -129,7 +109,7 @@ export default ({
           right: calc(100% + 1.5rem);
         }
 
-        h4:last-of-type {
+        h6 {
           right: 130%;
           right: calc(100% + 6rem);
           text-align: right;
@@ -138,11 +118,11 @@ export default ({
     }
   `
 
-  const TimelineTitle = styled('h3')`
+  const TimelineTitle = styled('h4')`
     margin-right: 3rem;
   `
 
-  const TimelineSubtitle = styled('h4')`
+  const TimelineSubtitle = styled('h5')`
     margin-bottom: 0;
 
     ${MIN_TABLET_MEDIA_QUERY} {
@@ -150,9 +130,7 @@ export default ({
     }
   `
 
-  const TimelineDate = styled('h4')`
-    color: #666;
-
+  const TimelineDate = styled('h6')`
     ${MIN_TABLET_MEDIA_QUERY} {
       color: #333;
     }

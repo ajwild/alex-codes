@@ -39,7 +39,7 @@ export default ({ elements: timelineActivities }: TimelineComponentProps) => {
   `
 
   return (
-    <Segment>
+    <Segment background="#ddd">
       <Timeline>
         {timelineActivities.map(activity => {
           return (

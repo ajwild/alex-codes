@@ -38,13 +38,9 @@ const typography = new Typography({
   blockMarginBottom: 1,
   includeNormalize: true,
   roundToNearestHalfLine: false,
-  overrideStyles: (
-    { adjustFontSizeTo, establishBaseline, linesForFontSize, rhythm, scale },
-    options,
-    styles
-  ) => ({
+  overrideStyles: ({ adjustFontSizeTo, rhythm }) => ({
     'html,body': {
-      backgroundColor: '#ddd',
+      backgroundColor: '#fff',
     },
     h1: {
       color: '#000',
@@ -59,13 +55,30 @@ const typography = new Typography({
       ...adjustFontSizeTo('1.2rem', 1),
     },
     h4: {
+      ...adjustFontSizeTo('1.2rem', 1),
+    },
+    h5: {
       ...adjustFontSizeTo('1rem', 1),
+      color: '#666',
+    },
+    h6: {
+      ...adjustFontSizeTo('1rem', 1),
+      color: '#999',
     },
     input: {
       marginBottom: rhythm(1),
     },
     'p:last-child': {
       marginBottom: 0,
+    },
+    svg: {
+      fill: 'currentColor',
+      width: '1em',
+      height: '1em',
+      display: 'inline-block',
+      fontSize: '1.5em',
+      userSelect: 'none',
+      flexShrink: 0,
     },
     textarea: {
       marginBottom: rhythm(1),
