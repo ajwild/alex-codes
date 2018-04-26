@@ -88,7 +88,7 @@ const TimelineElement = styled('div')`
       margin-left: calc(50% + 3rem);
 
       div {
-        right: 106%
+        right: 106%;
         right: calc(100% + 1.5rem);
       }
 
