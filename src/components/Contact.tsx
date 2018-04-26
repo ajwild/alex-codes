@@ -54,6 +54,12 @@ const SubmitButton = styled('button')`
   padding: 0.75rem 3rem;
   background: #ddd;
   border: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #ccc;
+  }
 `
 
 const SubmitIcon = styled(SendIcon)`

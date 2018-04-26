@@ -18,7 +18,10 @@ const formFieldStyle = `
   display: inline-block;
   width: 100%;
   padding: 0.75rem;
+  background-color: #fff;
   border: none;
+  box-shadow: none;
+  outline: none;
   line-height: 1.5;
 `
 
