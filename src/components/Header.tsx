@@ -6,38 +6,36 @@ import Segment from './Segment'
 
 import portraitUrl from '../assets/portrait.svg'
 
-export default () => {
-  const Subtitle = styled('h2')`
-    margin-bottom: 0;
-    font-weight: 300;
-  `
+const Subtitle = styled('h2')`
+  margin-bottom: 0;
+  font-weight: 300;
+`
 
-  const Portrait = styled('img').attrs({ src: portraitUrl })`
-    display: none;
+const Portrait = styled('img').attrs({ src: portraitUrl })`
+  display: none;
 
-    @media (min-width: 380px) {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: -3rem;
-      z-index: -1;
-      height: 90%;
-      height: calc(100% - 1.5rem);
-      width: auto;
-      margin: 0;
-    }
+  @media (min-width: 380px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    z-index: -1;
+    height: 90%;
+    height: calc(100% - 1.5rem);
+    width: auto;
+    margin: 0;
+  }
 
-    ${MIN_TABLET_MEDIA_QUERY} {
-      right: -4.5rem;
-    }
-  `
+  ${MIN_TABLET_MEDIA_QUERY} {
+    right: -4.5rem;
+  }
+`
 
-  return (
-    <Segment background="#fff">
-      <h1>Alex Wild</h1>
-      <Subtitle>Full Stack JS Developer</Subtitle>
-      <Subtitle>Vancouver, BC, Canada</Subtitle>
-      <Portrait />
-    </Segment>
-  )
-}
+export default () => (
+  <Segment background="#fff">
+    <h1>Alex Wild</h1>
+    <Subtitle>Full Stack JS Developer</Subtitle>
+    <Subtitle>Vancouver, BC, Canada</Subtitle>
+    <Portrait />
+  </Segment>
+)
