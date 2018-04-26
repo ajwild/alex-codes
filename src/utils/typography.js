@@ -61,8 +61,14 @@ const typography = new Typography({
     h4: {
       ...adjustFontSizeTo('1rem', 1),
     },
+    input: {
+      marginBottom: rhythm(1),
+    },
     'p:last-child': {
       marginBottom: 0,
+    },
+    textarea: {
+      marginBottom: rhythm(1),
     },
     [MIN_MOBILE_MEDIA_QUERY]: {
       h1: {

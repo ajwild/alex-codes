@@ -85,7 +85,6 @@ export default ({
     ${MIN_TABLET_MEDIA_QUERY} {
       width: 45%;
       width: calc(50% - 3rem);
-      margin-left: 0;
 
       div {
         position: absolute;
@@ -101,6 +100,8 @@ export default ({
       }
 
       :nth-of-type(odd) {
+        margin-left: 0;
+
         &:before {
           left: auto;
           right: -0.75rem;
@@ -109,10 +110,12 @@ export default ({
         }
 
         div {
+          left: 106%;
           left: calc(100% + 1.5rem);
         }
 
         h4:last-of-type {
+          left: 130%;
           left: calc(100% + 6rem);
         }
       }
@@ -122,10 +125,12 @@ export default ({
         margin-left: calc(50% + 3rem);
 
         div {
+          right: 106%
           right: calc(100% + 1.5rem);
         }
 
         h4:last-of-type {
+          right: 130%;
           right: calc(100% + 6rem);
           text-align: right;
         }

@@ -13,10 +13,7 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
   public render() {
     return (
       <React.Fragment>
-        <Helmet>
-          <title>alex.codes</title>
-          <link rel="stylesheet" href="//basehold.it/24" />
-        </Helmet>
+        <Helmet title="alex.codes" />
         <Header />
         {this.props.children()}
       </React.Fragment>

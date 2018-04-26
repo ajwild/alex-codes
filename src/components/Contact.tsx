@@ -1,36 +1,10 @@
 import * as React from 'react'
-import {
-  Button,
-  Grid,
-  Icon,
-  Paper,
-  Snackbar,
-  TextField,
-  Typography,
-} from 'material-ui'
-import { withStyles } from 'material-ui/styles'
+import styled from 'styled-components'
+import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import { Send as SendIcon } from '@material-ui/icons'
 
-const styles = (theme: any) => ({
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
-  root: theme.mixins.gutters({
-    paddingBottom: 16,
-    paddingTop: 16,
-  }),
-  submitButton: {
-    marginTop: theme.spacing.unit * 3,
-  },
-})
-
-interface ContactFormProps {
-  classes: {
-    rightIcon: string
-    root: string
-    submitButton: string
-  }
-}
+import Segment from './Segment'
+import TextField from './TextField'
 
 interface ContactFormState {
   formFields?: {
@@ -43,7 +17,8 @@ interface ContactFormState {
     [prop: string]: string
   }
   sendingForm?: boolean
-  showFormError?: boolean
+  showFormContentError?: boolean
+  showFormDeliveryError?: boolean
   showFormSuccess?: boolean
 }
 
@@ -54,25 +29,62 @@ interface ChangeEventProps {
   }
 }
 
-enum SnackbarType {
-  Error = 'ERROR',
-  Success = 'SUCCESS',
-}
+const NameField = styled(TextField)`
+  ${MIN_TABLET_MEDIA_QUERY} {
+    width: 48%;
+    width: calc(50% - 0.75rem);
+    margin-right: 2%;
+    margin-right: calc(0.75rem);
+  }
+`
 
-class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
-  constructor(props: ContactFormProps) {
+const EmailField = styled(TextField)`
+  ${MIN_TABLET_MEDIA_QUERY} {
+    width: 48%;
+    width: calc(50% - 0.75rem);
+    margin-left: 2%;
+    margin-left: calc(0.75rem);
+  }
+`
+
+const SubmitButton = styled('button')`
+  display: flex;
+  width: auto;
+  margin: 0 auto;
+  padding: 0.75rem 3rem;
+  background: #ddd;
+  border: none;
+`
+
+const SubmitIcon = styled(SendIcon)`
+  margin-left: 0.75rem;
+`
+
+const FormFeedback = styled('div')`
+  text-align: center;
+`
+
+export default class ContactForm extends React.Component<
+  any,
+  ContactFormState
+> {
+  constructor(props: any) {
     super(props)
 
     this.state = { ...this.getDefaultState() }
   }
 
   public render() {
-    const { classes } = this.props
-    const { formFields, showFormError, showFormSuccess } = this.state
+    const {
+      formFields,
+      showFormContentError,
+      showFormDeliveryError,
+      showFormSuccess,
+    } = this.state
 
     return (
-      <Paper className={classes.root}>
-        <Typography variant="headline">Contact</Typography>
+      <Segment background="#eee">
+        <h3>Want to get in touch?</h3>
         <form
           name="contact"
           data-netlify={true}
@@ -81,92 +93,68 @@ class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
         >
           <div className="hidden">
             <TextField
-              fullWidth={true}
               id="contact-honeypot"
-              label="Do not complete this field"
+              placeholder="Do not complete this field"
               name="honeypot"
               onChange={this.handleChange}
               type="text"
               value={formFields.honeypot}
             />
           </div>
-          <Grid container={true} spacing={24}>
-            <Grid item={true} xs={12} sm={6}>
-              <TextField
-                fullWidth={true}
-                id="contact-name"
-                label="Name"
-                name="name"
-                onChange={this.handleChange}
-                required={true}
-                type="text"
-                value={formFields.name}
-              />
-            </Grid>
-            <Grid item={true} xs={12} sm={6}>
-              <TextField
-                fullWidth={true}
-                id="contact-email"
-                label="Email"
-                name="email"
-                onChange={this.handleChange}
-                required={true}
-                type="email"
-                value={formFields.email}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <TextField
-                fullWidth={true}
-                id="contact-subject"
-                label="Subject"
-                name="subject"
-                onChange={this.handleChange}
-                required={true}
-                type="text"
-                value={formFields.subject}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <TextField
-                fullWidth={true}
-                id="contact-message"
-                label="Message"
-                multiline={true}
-                name="message"
-                onChange={this.handleChange}
-                required={true}
-                rows={4}
-                type="text"
-                value={formFields.message}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <Button
-                color="primary"
-                disabled={this.state.sendingForm}
-                type="submit"
-                variant="raised"
-              >
-                Send
-                <SendIcon className={classes.rightIcon} />
-              </Button>
-            </Grid>
-          </Grid>
+          <NameField
+            id="contact-name"
+            placeholder="Name"
+            name="name"
+            onChange={this.handleChange}
+            required={true}
+            type="text"
+            value={formFields.name}
+          />
+          <EmailField
+            id="contact-email"
+            placeholder="Email"
+            name="email"
+            onChange={this.handleChange}
+            required={true}
+            type="email"
+            value={formFields.email}
+          />
+          <TextField
+            id="contact-subject"
+            placeholder="Subject"
+            name="subject"
+            onChange={this.handleChange}
+            required={true}
+            type="text"
+            value={formFields.subject}
+          />
+          <TextField
+            id="contact-message"
+            placeholder="Message"
+            multiline={true}
+            name="message"
+            onChange={this.handleChange}
+            required={true}
+            rows={5}
+            type="text"
+            value={formFields.message}
+          />
+          <SubmitButton disabled={this.state.sendingForm} type="submit">
+            Send
+            <SubmitIcon />
+          </SubmitButton>
         </form>
-        <Snackbar
-          open={showFormSuccess}
-          autoHideDuration={5000}
-          onClose={this.handleClose(SnackbarType.Success)}
-          message={<span>Message sent. Thanks!</span>}
-        />
-        <Snackbar
-          open={showFormError}
-          autoHideDuration={5000}
-          onClose={this.handleClose(SnackbarType.Error)}
-          message={<span>Error sending message. Please try again.</span>}
-        />
-      </Paper>
+        <FormFeedback>
+          {showFormSuccess && <span>Message sent. Thanks!</span>}
+          {showFormDeliveryError && (
+            <span>Error sending message. Please try again.</span>
+          )}
+          {showFormContentError && <span>Please complete all fields.</span>}
+          {!showFormSuccess &&
+            !showFormContentError &&
+            !showFormDeliveryError && <span>&nbsp;</span>}
+        </FormFeedback>
+      </Segment>
     )
   }
 
@@ -190,7 +178,8 @@ class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
         subject: '',
       },
       sendingForm: false,
-      showFormError: false,
+      showFormContentError: false,
+      showFormDeliveryError: false,
       showFormSuccess: false,
     }
   }
@@ -208,36 +197,24 @@ class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
     this.setState(stateUpdate)
   }
 
-  private handleClose = (snackbarType: SnackbarType) => {
-    return (event: any, reason: string) => {
-      if (reason === 'clickaway') {
-        return
-      }
-
-      const stateUpdate: ContactFormState = {}
-
-      switch (snackbarType) {
-        case 'SUCCESS': {
-          stateUpdate.showFormSuccess = false
-          break
-        }
-        case 'ERROR': {
-          stateUpdate.showFormError = false
-          break
-        }
-        default: {
-          return
-        }
-      }
-
-      this.setState(stateUpdate)
-    }
-  }
-
   private handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
 
-    const stateUpdateLoading: ContactFormState = { sendingForm: true }
+    const { email, message, name, subject } = this.state.formFields
+    if (!email || !message || !name || !subject) {
+      const stateUpdateContentError: ContactFormState = {
+        showFormContentError: true,
+      }
+      this.setState(stateUpdateContentError)
+      return
+    }
+
+    const stateUpdateLoading: ContactFormState = {
+      sendingForm: true,
+      showFormContentError: false,
+      showFormDeliveryError: false,
+      showFormSuccess: false,
+    }
     this.setState(stateUpdateLoading)
 
     fetch('/', {
@@ -256,12 +233,10 @@ class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
       .catch(error => {
         const stateUpdateComplete: ContactFormState = {
           sendingForm: false,
-          showFormError: true,
+          showFormDeliveryError: true,
         }
 
         this.setState(stateUpdateComplete)
       })
   }
 }
-
-export default withStyles(styles)(ContactForm)
