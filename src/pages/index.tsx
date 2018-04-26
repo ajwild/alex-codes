@@ -11,10 +11,11 @@ interface IndexPageProps {
         {
           node: {
             date: string
-            type: string
-            title: string
-            subtitle: string
             description: string
+            subtitle?: string
+            tags?: string[]
+            title: string
+            type?: string
           }
         }
       ]
@@ -44,10 +45,11 @@ export const pageQuery = graphql`
       edges {
         node {
           date
-          type
-          title
-          subtitle
           description
+          subtitle
+          tags
+          title
+          type
         }
       }
     }

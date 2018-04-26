@@ -10,10 +10,11 @@ interface TimelineComponentProps {
     {
       node: {
         date: string
-        type: string
-        title: string
-        subtitle: string
         description: string
+        subtitle?: string
+        tags?: string[]
+        title: string
+        type?: string
       }
     }
   ]

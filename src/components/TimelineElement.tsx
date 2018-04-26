@@ -7,13 +7,16 @@ import {
   FaCode as ProjectIcon,
 } from 'react-icons/lib/fa'
 
+import TagList from './TagList'
+
 interface TimelineComponentProps {
   element: {
     date: string
-    type?: string
-    title: string
-    subtitle?: string
     description: string
+    subtitle?: string
+    tags?: string[]
+    title: string
+    type?: string
   }
 }
 
@@ -130,7 +133,7 @@ const TimelineIconWrapper = styled('div')`
 `
 
 export default ({
-  element: { date, type, title, subtitle, description },
+  element: { date, description, subtitle, tags, title, type },
 }: TimelineComponentProps) => {
   let TimelineIcon
 
@@ -160,6 +163,7 @@ export default ({
       {subtitle && <TimelineSubtitle>{subtitle}</TimelineSubtitle>}
       <TimelineDate>{date}</TimelineDate>
       <p>{description}</p>
+      {tags && tags.length > 0 && <TagList tags={tags} />}
     </TimelineElement>
   )
 }

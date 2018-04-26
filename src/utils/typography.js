@@ -68,6 +68,9 @@ const typography = new Typography({
     input: {
       marginBottom: rhythm(1),
     },
+    li: {
+      marginBottom: 0,
+    },
     'p:last-child': {
       marginBottom: 0,
     },
@@ -82,6 +85,9 @@ const typography = new Typography({
     },
     textarea: {
       marginBottom: rhythm(1),
+    },
+    'ul:last-child': {
+      marginBottom: 0,
     },
     [MIN_MOBILE_MEDIA_QUERY]: {
       h1: {

@@ -7,6 +7,25 @@
     running or cycling goals. The primary aim of developing this website
     was to learn new frameworks and improve my knowledge of the AWS
     ecosystem.
+  tags:
+    - Lambda
+    - DynamoDB
+    - SQS
+    - SES
+    - S3
+    - API Gateway
+    - Cognito
+    - GraphQL
+    - React
+    - Semantic UI
+    - Styled Components
+    - Jest
+    - Enzyme
+    - Gulp
+    - Babel
+    - Webpack
+    - ESLint
+    - Git
 
 - date: September 2014 to December 2017
   type: work
@@ -19,6 +38,25 @@
     reviewing the code of team members. There were also a number of Linux
     and Mac system administration tasks, including migrating services to
     new rack servers.
+  tags:
+    - Node.js
+    - MongoDB
+    - Redis
+    - Elasticsearch
+    - Kibana
+    - AngularJS
+    - Express.js
+    - Socket.IO
+    - JWT
+    - OAuth 2
+    - Pug
+    - Stylus
+    - Mocha
+    - Grunt
+    - NPM
+    - Bower
+    - Git
+    - PM2
 
 - date: August 2013 to February 2014
   type: work
@@ -29,6 +67,16 @@
     startup. My main task was to automate the creation of mobile web apps
     from data provided by the authoring platform (shareableapps.com). We
     also created a number of bespoke web apps for clients.
+  tags:
+    - jQuery
+    - jQuery Mobile
+    - HTML
+    - CSS
+    - LESS
+    - Handlebars
+    - Grunt
+    - Bower
+    - Git
 
 - date: July 2013 to February 2018
   type: work
@@ -39,6 +87,16 @@
     (juggler.com.au), most of which were powered by WordPress. The
     majority of the work involved creating new themes based on Photoshop
     templates provided by the designer.
+  tags:
+    - HTML
+    - CSS
+    - SCSS
+    - jQuery
+    - PHP
+    - MySQL
+    - WordPress
+    - X-Cart
+    - SEO
 
 - date: November 2011 to December 2011
   type: project
@@ -48,6 +106,13 @@
     modified version of the Twenty Twelve theme. A large number of
     customisations were added to the theme functions, and a few standard
     plugins were also used.
+  tags:
+    - HTML
+    - CSS
+    - PHP
+    - MySQL
+    - WordPress
+    - SEO
 
 - date: October 2011 to October 2012
   type: work
@@ -58,6 +123,14 @@
     front-end developer, on a custom-built PHP website. During my time there we
     redesigned the whole front-end. I also used Photoshop for editing
     promotional banner and product image retouching.
+  tags:
+    - HTML
+    - CSS
+    - jQuery
+    - PHP
+    - WordPress
+    - Photoshop
+    - SEO
 
 - date: September 2004 to May 2007
   type: education
