@@ -7,27 +7,24 @@ export default () => (
   <Segment background="#eee">
     <h3>Hello, how do you do?</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ornare
-      felis ullamcorper hendrerit dictum. Aenean elementum ac sem non
-      vestibulum. Suspendisse aliquet nibh non tristique iaculis. Pellentesque
-      semper mi vitae velit tincidunt iaculis. Duis eu enim orci. Proin vitae
-      purus maximus, lacinia leo eu, ornare ex. Nunc ut sagittis justo, id
-      maximus quam. Sed sed nisi et ipsum faucibus malesuada. In cursus eleifend
-      mauris, in porttitor erat. Maecenas tincidunt gravida tempor. Quisque sed
-      efficitur sem.
+      My name is Alex Wild and I am a full stack JavaScript developer living in
+      Vancouver, BC. I enjoy working as a full stack developer, from
+      provisioning servers all the way up to getting the user interface
+      pixel-perfect, as the variety of work keeps me motivated and there is
+      always something new to learn. For front-end code I have recently been
+      using React, and I have spent a number of years working with AngularJS.
+      For back-end code I often use Node.js with the Express or Serverless
+      frameworks.
     </p>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in
-      turpis id arcu aliquet sagittis. Ut turpis est, convallis in mollis eget,
-      scelerisque id nunc. Sed non molestie ligula. Duis ut orci quis ante
-      tempor finibus et ultrices tellus. Mauris feugiat, ligula ac euismod
-      congue, justo nisl auctor diam, sit amet faucibus massa magna sed sem.
-      Mauris aliquet ornare arcu, vitae ultrices mauris rhoncus non. Curabitur
-      euismod dui eu lacinia dignissim. Ut rhoncus tincidunt lectus. Duis a
-      volutpat ligula. Duis posuere, felis scelerisque efficitur hendrerit,
-      metus elit porttitor lorem, in venenatis ante libero eget lacus. Aliquam
-      interdum suscipit nisl, id cursus urna consequat sit amet. Aliquam
-      fringilla rutrum ex, id suscipit sapien dapibus eget.
+      If you'd like to get in touch you can connect with me on{' '}
+      <a href="https://www.linkedin.com/in/alexjwild/" target="_blank">
+        LinkedIn
+      </a>, or send me a message using the contact form below. You can also see
+      what I've been up to on{' '}
+      <a href="https://github.com/ajwild/" target="_blank">
+        GitHub
+      </a>.
     </p>
   </Segment>
 )

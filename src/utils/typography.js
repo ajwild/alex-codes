@@ -42,6 +42,10 @@ const typography = new Typography({
     'html,body': {
       backgroundColor: '#fff',
     },
+    a: {
+      color: '#000',
+      textDecoration: 'underline',
+    },
     h1: {
       color: '#000',
       fontFamily: titleFontFamily.join(','),

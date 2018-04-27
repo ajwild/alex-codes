@@ -54,6 +54,7 @@ const SubmitButton = styled('button')`
   padding: 0.75rem 3rem;
   background: #ddd;
   border: none;
+  cursor: pointer;
 
   &:active,
   &:focus,
