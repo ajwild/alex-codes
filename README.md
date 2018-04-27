@@ -1,13 +1,6 @@
-# gatsby-starter-typescript
-The [default Gatsby starter](https://github.com/gatsbyjs/gatsby-starter-default) converted to [TypeScript](https://www.typescriptlang.org/).
+# alex.codes
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+The portfolio website of __Alex Wild__, a full stack JavaScript developer living in Vancouver, BC.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-starter-typescript https://github.com/haysclark/gatsby-starter-typescript
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/haysclark/gatsby-starter-typescript)
+Created using [Gatsby](https://www.gatsbyjs.org), [React](https://reactjs.org/), [styled-components](https://www.styled-components.com/) and [TypeScript](https://www.typescriptlang.org/).  
+Deployed on [Netlify](https://www.netlify.com/).
