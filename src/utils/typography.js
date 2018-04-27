@@ -45,6 +45,7 @@ const typography = new Typography({
     a: {
       color: '#000',
       textDecoration: 'underline',
+      cursor: 'pointer',
     },
     h1: {
       color: '#000',

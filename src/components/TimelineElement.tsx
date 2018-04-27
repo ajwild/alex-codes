@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
@@ -49,7 +50,7 @@ const TimelineElement = styled('div')`
     width: 45%;
     width: calc(50% - 3rem);
 
-    div {
+    .icon-wrapper {
       position: absolute;
       top: 0.75rem;
       height: 3rem;
@@ -72,7 +73,7 @@ const TimelineElement = styled('div')`
         border-right: none;
       }
 
-      div {
+      .icon-wrapper {
         left: 106%;
         left: calc(100% + 1.5rem);
       }
@@ -87,7 +88,7 @@ const TimelineElement = styled('div')`
       margin-left: 55%;
       margin-left: calc(50% + 3rem);
 
-      div {
+      .icon-wrapper {
         right: 106%;
         right: calc(100% + 1.5rem);
       }
@@ -98,6 +99,19 @@ const TimelineElement = styled('div')`
         text-align: right;
       }
     }
+  }
+`
+
+const TimelineIconWrapper = styled('div').attrs({ className: 'icon-wrapper' })`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #666;
+
+  ${MIN_TABLET_MEDIA_QUERY} {
+    padding: 0.75rem;
+    background-color: #fff;
+    border-radius: 50%;
   }
 `
 
@@ -119,17 +133,25 @@ const TimelineDate = styled('h6')`
   }
 `
 
-const TimelineIconWrapper = styled('div')`
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: #666;
-
-  ${MIN_TABLET_MEDIA_QUERY} {
-    padding: 0.75rem;
-    background-color: #fff;
-    border-radius: 50%;
+const markdownLinkRenderer = ({ children, href }: any) => {
+  const targetBlankFlag = '{target_blank}'
+  if (href.indexOf(targetBlankFlag) === href.length - targetBlankFlag.length) {
+    return (
+      <a href={href.replace(targetBlankFlag, '')} target="_blank">
+        {children}
+      </a>
+    )
   }
+
+  return <a href={href}>{children}</a>
+}
+
+const TimelineDescription = styled(ReactMarkdown).attrs({
+  renderers: {
+    link: markdownLinkRenderer,
+  },
+})`
+  margin-bottom: 1.5rem;
 `
 
 export default ({
@@ -162,7 +184,7 @@ export default ({
       <TimelineTitle>{title}</TimelineTitle>
       {subtitle && <TimelineSubtitle>{subtitle}</TimelineSubtitle>}
       <TimelineDate>{date}</TimelineDate>
-      <p>{description}</p>
+      <TimelineDescription source={description} />
       {tags && tags.length > 0 && <TagList tags={tags} />}
     </TimelineElement>
   )

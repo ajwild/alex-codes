@@ -2,7 +2,8 @@
   type: project
   title: I Challenge...
   description:
-    In recent months I have created a website (ichallenge.club), which
+    In recent months I have created a website
+    ([ichallenge.club](https://www.ichallenge.club/{target_blank})), which
     integrates with the Strava API and allows users and clubs to set running and
     cycling goals. The primary aim of developing this website was to learn new
     frameworks and improve my knowledge of the AWS ecosystem.
@@ -32,14 +33,16 @@
   subtitle: React Group, EPFL, Lausanne
   description:
     I was hired by a university research group to create a new AngularJS user
-    interface for the Graasp platform (graasp.eu). I also had to modify the
+    interface for the Graasp platform
+    ([graasp.eu](http://graasp.eu/{target_blank})). I also had to modify the
     platform so that it could be used by Doctors Without Borders Geneva. I
     quickly transitioned into a full stack role and took on further
     responsibilities, including updating and optimising the SpeakUp web app
-    (speakup.info). Alongside the development work I would mentor students and
-    interns, review the code of team members, and provide time estimates for
-    development work. There were also a number of Linux and Mac system
-    administration tasks, including migrating the services to new rack servers.
+    ([speakup.info](http://speakup.info/{target_blank})). Alongside the
+    development work I would mentor students and interns, review the code of
+    team members, and provide time estimates for development work. There were
+    also a number of Linux and Mac system administration tasks, including
+    migrating the services to new rack servers.
   tags:
     - Node.js
     - MongoDB
@@ -67,9 +70,10 @@
   description:
     My first experience of working in a startup was at Amplifier Agency, where I
     worked with a team of developers to create the Shareable Apps platform
-    (shareableapps.com). My role was to automate the creation of jQuery Mobile
-    web apps using data provided by the authoring platform. We also created a
-    number of bespoke web apps for clients.
+    ([shareableapps.com](http://www.shareableapps.com/{target_blank})). My role
+    was to automate the creation of jQuery Mobile web apps using data provided
+    by the authoring platform. We also created a number of bespoke web apps for
+    clients.
   tags:
     - jQuery
     - jQuery Mobile
@@ -86,10 +90,11 @@
   title: Freelance Web Developer
   subtitle: Juggler Design, Melbourne
   description:
-    While working with the Juggler Design agency (juggler.com.au), I created
-    many websites for small businesses. Most of these were built using WordPress
-    as the back-end. The majority of the work involved creating new themes based
-    on Photoshop templates provided by the graphic designer.
+    While working with the Juggler Design agency
+    ([juggler.com.au](https://juggler.com.au/{target_blank})), I created many
+    websites for small businesses. Most of these were built using WordPress as
+    the back-end. The majority of the work involved creating new themes based on
+    Photoshop templates provided by the graphic designer.
   tags:
     - HTML
     - CSS
@@ -105,9 +110,10 @@
   type: project
   title: Crème Anglaise
   description:
-    The website was created using WordPress, and the theme is a heavily modified
-    version of the Twenty Twelve theme. A large number of customisations were
-    added as theme functions, and a few standard plugins were also used.
+    The website ([cremeanglaise.fr](http://www.cremeanglaise.fr/{target_blank}))
+    was created using WordPress, and the theme is a heavily modified version of
+    the Twenty Twelve theme. A large number of customisations were added as
+    theme functions, and a few standard plugins were also used.
   tags:
     - HTML
     - CSS
@@ -121,12 +127,12 @@
   title: Front-end Web Developer
   subtitle: The Safe Shop, Preston
   description:
-    At The Safe Shop (now safe.co.uk) I worked in a small team, as the front-end
-    developer, on a custom-built PHP website. During my time there we
-    redeveloped the whole front-end. Using mock-ups provided by the designer I
-    produced a responsive design that integrated with the PHP back-end. I often
-    used Photoshop for editing promotional banners and retouching product
-    images.
+    At The Safe Shop (now [safe.co.uk](https://www.safe.co.uk/{target_blank})) I
+    worked in a small team, as the front-end developer, on a custom-built PHP
+    website. During my time there we redeveloped the whole front-end. Using
+    mock-ups provided by the designer I produced a responsive design that
+    integrated with the PHP back-end. I often used Photoshop for editing
+    promotional banners and retouching product images.
   tags:
     - HTML
     - CSS

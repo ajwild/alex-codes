@@ -2,8 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 interface SegmentProps {
-  children: JSX.Element | JSX.Element[]
   background?: string
+  children: JSX.Element | JSX.Element[]
+  name?: string
 }
 
 const Wrapper = styled('div')`
@@ -19,8 +20,8 @@ const Container = styled('div')`
   padding: 1.5rem;
 `
 
-export default ({ children, background }: SegmentProps) => (
-  <Wrapper background={background}>
+export default ({ background, children, name }: SegmentProps) => (
+  <Wrapper background={background} name={name}>
     <Container>{children}</Container>
   </Wrapper>
 )

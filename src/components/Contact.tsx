@@ -91,10 +91,10 @@ export default class ContactForm extends React.Component<
     } = this.state
 
     return (
-      <Segment background="#eee">
+      <Segment background="#eee" name="contact">
         <h3>Want to get in touch?</h3>
         <form
-          name="contact"
+          name="contact-form"
           data-netlify={true}
           data-netlify-honeypot="honeypot"
           onSubmit={this.handleSubmit}
