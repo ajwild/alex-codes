@@ -18,5 +18,23 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: `./src/assets/favicon.png`,
+        injectHTML: true,
+        icons: {
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
+          coast: false,
+          favicons: true,
+          firefox: false,
+          twitter: false,
+          yandex: false,
+          windows: false,
+        },
+      },
+    },
   ],
 }
