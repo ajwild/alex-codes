@@ -3,8 +3,6 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 
-import './site.css'
-
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any
 }

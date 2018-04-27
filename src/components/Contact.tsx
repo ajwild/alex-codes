@@ -29,6 +29,14 @@ interface ChangeEventProps {
   }
 }
 
+const InvisibleField = styled(TextField)`
+  display: block;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+`
+
 const NameField = styled(TextField)`
   ${MIN_TABLET_MEDIA_QUERY} {
     width: 48%;
@@ -99,16 +107,14 @@ export default class ContactForm extends React.Component<
           data-netlify-honeypot="honeypot"
           onSubmit={this.handleSubmit}
         >
-          <div className="hidden">
-            <TextField
-              id="contact-honeypot"
-              placeholder="Do not complete this field"
-              name="honeypot"
-              onChange={this.handleChange}
-              type="text"
-              value={formFields.honeypot}
-            />
-          </div>
+          <InvisibleField
+            id="contact-honeypot"
+            placeholder="Do not complete this field"
+            name="honeypot"
+            onChange={this.handleChange}
+            type="text"
+            value={formFields.honeypot}
+          />
           <NameField
             id="contact-name"
             placeholder="Name"
