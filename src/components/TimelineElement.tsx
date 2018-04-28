@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
   FaGraduationCap as EducationIcon,
@@ -137,9 +138,9 @@ const markdownLinkRenderer = ({ children, href }: any) => {
   const targetBlankFlag = '{target_blank}'
   if (href.indexOf(targetBlankFlag) === href.length - targetBlankFlag.length) {
     return (
-      <a href={href.replace(targetBlankFlag, '')} target="_blank">
+      <OutboundLink href={href.replace(targetBlankFlag, '')} target="_blank">
         {children}
-      </a>
+      </OutboundLink>
     )
   }
 

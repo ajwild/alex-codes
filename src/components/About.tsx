@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-scroll'
 import styled from 'styled-components'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Segment from './Segment'
 
@@ -19,16 +20,19 @@ export default () => (
     </p>
     <p>
       If you'd like to get in touch you can connect with me on{' '}
-      <a href="https://www.linkedin.com/in/alexjwild/" target="_blank">
+      <OutboundLink
+        href="https://www.linkedin.com/in/alexjwild/"
+        target="_blank"
+      >
         LinkedIn
-      </a>, or send me a message using the{' '}
+      </OutboundLink>, or send me a message using the{' '}
       <Link to="contact" smooth={true}>
         contact form
       </Link>{' '}
       below. You can also see what I've been up to on{' '}
-      <a href="https://github.com/ajwild/" target="_blank">
+      <OutboundLink href="https://github.com/ajwild/" target="_blank">
         GitHub
-      </a>.
+      </OutboundLink>.
     </p>
   </Segment>
 )
