@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+http://alexwild.co.uk/* https://alex.codes/:splat 301!
+https://alexwild.co.uk/* https://alex.codes/:splat 301!
+http://www.alexwild.co.uk/* https://alex.codes/:splat 301!
+https://www.alexwild.co.uk/* https://alex.codes/:splat 301!
