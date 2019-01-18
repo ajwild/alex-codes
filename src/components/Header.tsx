@@ -1,6 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import {
+  MIN_MOBILE_MEDIA_QUERY,
+  MIN_TABLET_MEDIA_QUERY,
+} from 'typography-breakpoint-constants'
 
 import Segment from './Segment'
 
@@ -18,12 +21,16 @@ const Portrait = styled('img').attrs({ src: portraitUrl })`
     display: block;
     position: absolute;
     bottom: 0;
-    right: -3rem;
+    right: -4.5rem;
     z-index: -1;
     height: 90%;
     height: calc(100% - 1.5rem);
     width: auto;
     margin: 0;
+  }
+
+  ${MIN_MOBILE_MEDIA_QUERY} {
+    right: -6rem;
   }
 
   ${MIN_TABLET_MEDIA_QUERY} {

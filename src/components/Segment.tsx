@@ -17,7 +17,7 @@ const Container = styled('div')`
   z-index: 0;
   max-width: 60rem;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
 `
 
 export default ({ background, children, name }: SegmentProps) => (

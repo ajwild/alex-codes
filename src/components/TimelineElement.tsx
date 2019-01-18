@@ -118,6 +118,10 @@ const TimelineIconWrapper = styled('div').attrs({ className: 'icon-wrapper' })`
 
 const TimelineTitle = styled('h4')`
   margin-right: 3rem;
+
+  ${MIN_TABLET_MEDIA_QUERY} {
+    margin-right: 0;
+  }
 `
 
 const TimelineSubtitle = styled('h5')`
