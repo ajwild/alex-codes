@@ -1,13 +1,58 @@
+- date: May 2018 - December 2018
+  type: work
+  title: Senior JavaScript Developer
+  subtitle: Control, Vancouver
+  description:
+    At Control I worked as a full stack developer on a web application which
+    aggregated data from multiple payment providers and displayed revenue
+    analytics to the user. I was part of a team of approximately ten people,
+    and we followed agile development methodologies based around a two week
+    release cycle, with group sprint planning and review sessions and daily
+    scrum meetings. Shortly after joining I took over the role of lead front-end
+    developer, which involved maintaining and developing features for the Vue.js
+    website, taking part in feature discussions and UI/UX reviews, and mentoring
+    and reviewing the code of other team members. I also spent much of my time
+    working on the server API, helping the back-end developers to transition
+    from an object oriented JSON API using MySQL and CouchDB to a functional
+    REST API using PostgreSQL and Citus.
+  tags:
+    - GCP
+    - Vue.js
+    - Vuex
+    - Pug
+    - Stylus
+    - Node.js
+    - Express.js
+    - Compute Engine
+    - App Engine
+    - PostgreSQL
+    - MySQL
+    - CouchDB
+    - Mocha
+    - Sinon
+    - Chai
+    - Karma
+    - Babel
+    - Webpack
+    - ESLint
+    - Git
+    - Docker
+
 - date: January 2018 - Present
   type: project
   title: I Challenge...
   description:
-    In recent months I have created a website
-    ([ichallenge.club](https://www.ichallenge.club/{target_blank})), which
+    I created a website
+    ([ichallenge.club](https://www.ichallenge.club/{target_blank})) which
     integrates with the Strava API and allows users and clubs to set running and
     cycling goals. The primary aim of developing this website was to learn new
     frameworks and improve my knowledge of the AWS ecosystem.
   tags:
+    - AWS
+    - React
+    - Semantic UI
+    - Styled Components
+    - GraphQL
     - Lambda
     - DynamoDB
     - SQS
@@ -15,10 +60,6 @@
     - S3
     - API Gateway
     - Cognito
-    - GraphQL
-    - React
-    - Semantic UI
-    - Styled Components
     - Jest
     - Enzyme
     - Gulp
@@ -35,7 +76,7 @@
     I was hired by a university research group to create a new AngularJS user
     interface for the Graasp platform
     ([graasp.eu](http://graasp.eu/{target_blank})). I also had to modify the
-    platform so that it could be used by Doctors Without Borders Geneva. I
+    website so that it could be used by Doctors Without Borders Geneva. I
     quickly transitioned into a full stack role and took on further
     responsibilities, including updating and optimising the SpeakUp web app
     ([speakup.info](http://speakup.info/{target_blank})). Alongside the
@@ -44,18 +85,18 @@
     also a number of Linux and Mac system administration tasks, including
     migrating the services to new rack servers.
   tags:
-    - Node.js
-    - MongoDB
-    - Redis
-    - Elasticsearch
-    - Kibana
     - AngularJS
+    - Pug
+    - Stylus
+    - Node.js
     - Express.js
     - Socket.IO
     - JWT
     - OAuth 2
-    - Pug
-    - Stylus
+    - MongoDB
+    - Redis
+    - Elasticsearch
+    - Kibana
     - Mocha
     - Grunt
     - NPM
@@ -77,10 +118,10 @@
   tags:
     - jQuery
     - jQuery Mobile
+    - Handlebars
     - HTML
     - CSS
     - LESS
-    - Handlebars
     - Grunt
     - Bower
     - Git
@@ -96,10 +137,10 @@
     the back-end. The majority of the work involved creating new themes based on
     Photoshop templates provided by the graphic designer.
   tags:
+    - jQuery
     - HTML
     - CSS
     - SCSS
-    - jQuery
     - PHP
     - MySQL
     - WordPress
@@ -134,9 +175,9 @@
     integrated with the PHP back-end. I often used Photoshop for editing
     promotional banners and retouching product images.
   tags:
+    - jQuery
     - HTML
     - CSS
-    - jQuery
     - PHP
     - WordPress
     - Photoshop

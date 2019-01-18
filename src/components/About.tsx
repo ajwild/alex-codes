@@ -14,9 +14,9 @@ export default () => (
       provisioning servers all the way up to getting the user interface
       pixel-perfect, as the variety of work keeps me motivated and there is
       always something new to learn. For front-end code I have recently been
-      using React, and I have spent a number of years working with AngularJS.
-      For back-end code I often use Node.js with the Express or Serverless
-      frameworks.
+      using Vue.js and React, and I have spent a number of years working with
+      AngularJS. For back-end code I often use Node.js with the Express or
+      Serverless frameworks.
     </p>
     <p>
       If you'd like to get in touch you can connect with me on{' '}
