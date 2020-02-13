@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import About from '../components/About'
 import Contact from '../components/Contact'
+import Layout from '../components/Layout'
 import Timeline from '../components/Timeline'
 
 interface IndexPageProps {
@@ -31,11 +32,11 @@ export default class extends React.Component<IndexPageProps, {}> {
 
   public render() {
     return (
-      <React.Fragment>
+      <Layout>
         <About />
         <Timeline elements={this.props.data.allTimelineYaml.edges} />
         <Contact />
-      </React.Fragment>
+      </Layout>
     )
   }
 }
