@@ -6,9 +6,7 @@ import {
 
 const titleFont = 'Josefin Slab'
 const titleFontFamily = [titleFont, 'serif']
-const headerFont = 'Montserrat'
-const headerFontFamily = [bodyFont, 'Helvetica', 'Arial', 'sans-serif']
-const bodyFont = headerFont.slice()
+const bodyFont = 'Montserrat'
 const bodyFontFamily = [bodyFont, 'Helvetica', 'Arial', 'sans-serif']
 const baseFontSize = 16
 const baseLineHeight = 1.5

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'react-scroll'
-import styled from 'styled-components'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Segment from './Segment'
