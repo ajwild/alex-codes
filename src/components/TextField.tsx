@@ -26,11 +26,12 @@ const formFieldStyle = `
 `
 
 const Input = styled('input')`
-  ${formFieldStyle};
+  ${formFieldStyle}
 `
 
 const TextArea = styled('textarea')`
-  ${formFieldStyle} display: block;
+  ${formFieldStyle}
+  display: block;
 `
 
 function TextFieldComponent({

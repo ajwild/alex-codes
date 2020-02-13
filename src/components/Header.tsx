@@ -9,9 +9,26 @@ import Segment from './Segment'
 
 import portraitUrl from '../assets/portrait.svg'
 
-const Subtitle = styled('h2')`
+const subtitleStyle = `
   margin-bottom: 0;
   font-weight: 300;
+`
+
+const RoleSubtitle = styled('h2')`
+  ${subtitleStyle}
+`
+
+const LocationSubtitle = styled('h2')`
+  ${subtitleStyle}
+  font-size: 1.45rem;
+
+  ${MIN_MOBILE_MEDIA_QUERY} {
+    font-size: 1.93rem;
+  }
+
+  ${MIN_TABLET_MEDIA_QUERY} {
+    font-size: 2.9rem;
+  }
 `
 
 const Portrait = styled('img').attrs({ src: portraitUrl })`
@@ -42,8 +59,8 @@ function HeaderComponent(): React.ReactElement {
   return (
     <Segment background="#fff">
       <h1>Alex Wild</h1>
-      <Subtitle>Full Stack JS Developer</Subtitle>
-      <Subtitle>Zürich, Switzerland</Subtitle>
+      <RoleSubtitle>Full Stack JS Developer</RoleSubtitle>
+      <LocationSubtitle>Zürich, Switzerland</LocationSubtitle>
       <Portrait />
     </Segment>
   )
