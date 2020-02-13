@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { MIN_DEFAULT_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import Segment from './Segment'
 import TimelineElement from './TimelineElement'
@@ -32,14 +32,14 @@ const Timeline = styled('div')`
     margin-left: -0.125rem;
     background: #eee;
 
-    ${MIN_TABLET_MEDIA_QUERY} {
+    ${MIN_DEFAULT_MEDIA_QUERY} {
       left: 50%;
     }
   }
 `
 
 export default ({ elements: timelineActivities }: TimelineComponentProps) => (
-  <Segment background="#ddd">
+  <Segment background="#ddd" width="90rem">
     <Timeline>
       {timelineActivities.map(activity => {
         return (

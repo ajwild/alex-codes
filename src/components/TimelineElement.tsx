@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { MIN_DEFAULT_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
   MdSchool as EducationIcon,
   MdWork as WorkIcon,
@@ -47,7 +47,7 @@ const TimelineElement = styled('div')`
     margin-bottom: 0;
   }
 
-  ${MIN_TABLET_MEDIA_QUERY} {
+  ${MIN_DEFAULT_MEDIA_QUERY} {
     width: 45%;
     width: calc(50% - 3rem);
 
@@ -109,7 +109,7 @@ const TimelineIconWrapper = styled('div').attrs({ className: 'icon-wrapper' })`
   right: 1.5rem;
   color: #666;
 
-  ${MIN_TABLET_MEDIA_QUERY} {
+  ${MIN_DEFAULT_MEDIA_QUERY} {
     padding: 0.75rem;
     background-color: #fff;
     border-radius: 50%;
@@ -119,7 +119,7 @@ const TimelineIconWrapper = styled('div').attrs({ className: 'icon-wrapper' })`
 const TimelineTitle = styled('h4')`
   margin-right: 3rem;
 
-  ${MIN_TABLET_MEDIA_QUERY} {
+  ${MIN_DEFAULT_MEDIA_QUERY} {
     margin-right: 0;
   }
 `
@@ -127,13 +127,13 @@ const TimelineTitle = styled('h4')`
 const TimelineSubtitle = styled('h5')`
   margin-bottom: 0;
 
-  ${MIN_TABLET_MEDIA_QUERY} {
+  ${MIN_DEFAULT_MEDIA_QUERY} {
     margin-bottom: 1.5rem;
   }
 `
 
 const TimelineDate = styled('h6')`
-  ${MIN_TABLET_MEDIA_QUERY} {
+  ${MIN_DEFAULT_MEDIA_QUERY} {
     color: #333;
   }
 `
