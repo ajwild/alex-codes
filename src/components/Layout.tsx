@@ -3,16 +3,21 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 
-class DefaultLayout extends React.PureComponent {
-  public render() {
-    return (
-      <React.Fragment>
-        <Helmet title="alex.codes" />
-        <Header />
-        {this.props.children}
-      </React.Fragment>
-    )
-  }
+interface LayoutComponentProps {
+  children: React.ReactElement | React.ReactElement[]
 }
 
-export default DefaultLayout
+function LayoutComponent({
+  children,
+}: LayoutComponentProps): React.ReactElement {
+  return (
+    <React.Fragment>
+      <Helmet title="alex.codes" />
+      <Header />
+      {children}
+    </React.Fragment>
+  )
+}
+LayoutComponent.displayName = 'Layout'
+
+export default LayoutComponent

@@ -25,22 +25,6 @@ interface IndexPageProps {
   }
 }
 
-export default class extends React.Component<IndexPageProps, {}> {
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context)
-  }
-
-  public render() {
-    return (
-      <Layout>
-        <About />
-        <Timeline elements={this.props.data.allTimelineYaml.edges} />
-        <Contact />
-      </Layout>
-    )
-  }
-}
-
 export const pageQuery = graphql`
   query IndexQuery {
     allTimelineYaml {
@@ -57,3 +41,16 @@ export const pageQuery = graphql`
     }
   }
 `
+
+function IndexPage(props: IndexPageProps): React.ReactElement {
+  return (
+    <Layout>
+      <About />
+      <Timeline elements={props.data.allTimelineYaml.edges} />
+      <Contact />
+    </Layout>
+  )
+}
+IndexPage.displayName = 'Index'
+
+export default IndexPage

@@ -22,6 +22,11 @@ interface TimelineComponentProps {
   }
 }
 
+interface MarkdownLinkRendererProps {
+  children: React.ReactElement[]
+  href: string
+}
+
 const TimelineElement = styled('div')`
   position: relative;
   margin-bottom: 1.5rem;
@@ -138,7 +143,10 @@ const TimelineDate = styled('h6')`
   }
 `
 
-const markdownLinkRenderer = ({ children, href }: any) => {
+const markdownLinkRenderer = ({
+  children,
+  href,
+}: MarkdownLinkRendererProps): React.ReactElement => {
   const targetBlankFlag = '{target_blank}'
   if (href.indexOf(targetBlankFlag) === href.length - targetBlankFlag.length) {
     return (
@@ -159,9 +167,9 @@ const TimelineDescription = styled(ReactMarkdown).attrs({
   margin-bottom: 1.5rem;
 `
 
-export default ({
+function TimelineElementComponent({
   element: { date, description, subtitle, tags, title, type },
-}: TimelineComponentProps) => {
+}: TimelineComponentProps): React.ReactElement {
   let TimelineIcon
 
   switch (type) {
@@ -194,3 +202,6 @@ export default ({
     </TimelineElement>
   )
 }
+TimelineElementComponent.displayName = 'TimelineElement'
+
+export default TimelineElementComponent

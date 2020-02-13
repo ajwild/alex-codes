@@ -6,7 +6,7 @@ interface TextField {
   label?: string
   multiline?: boolean
   name?: string
-  onChange?: any
+  onChange?: (event: React.ChangeEvent<HTMLElement>) => void
   placeholder?: string
   required?: boolean
   rows?: number
@@ -33,10 +33,16 @@ const TextArea = styled('textarea')`
   ${formFieldStyle} display: block;
 `
 
-export default ({ multiline, ...props }: TextField) => {
+function TextFieldComponent({
+  multiline,
+  ...props
+}: TextField): React.ReactElement {
   if (multiline) {
     return <TextArea {...props} />
   }
 
   return <Input {...props} />
 }
+TextFieldComponent.displayName = 'TextField'
+
+export default TextFieldComponent

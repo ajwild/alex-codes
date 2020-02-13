@@ -5,7 +5,7 @@ interface TagProps {
   text: string
 }
 
-const Tag = styled('li')`
+const ListTag = styled('li')`
   display: inline-block;
   position: relative;
   float: left;
@@ -46,4 +46,9 @@ const Tag = styled('li')`
   }
 `
 
-export default ({ text }: TagProps) => <Tag>{text}</Tag>
+function TagComponent({ text }: TagProps): React.ReactElement {
+  return <ListTag>{text}</ListTag>
+}
+TagComponent.displayName = 'Tag'
+
+export default TagComponent

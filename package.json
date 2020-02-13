@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "test": "npm lint",
     "format": "prettier --write \"src/**/*.ts*\"",
-    "lint": "tslint -c tslint.json \"src/**/*.ts*\"",
+    "lint": "eslint \"src/**/*.ts*\"",
     "precommit": "npm format && npm test"
   },
   "dependencies": {
@@ -44,6 +44,10 @@
     "@types/react-scroll": "^1.5.4",
     "@types/styled-components": "^4.4.3",
     "@types/typography-breakpoint-constants": "^0.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.3",
     "prettier": "^1.19.1",
     "tslint": "^6.0.0",

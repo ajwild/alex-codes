@@ -22,13 +22,6 @@ interface ContactFormState {
   showFormSuccess?: boolean
 }
 
-interface ChangeEventProps {
-  target: {
-    name: any
-    value: any
-  }
-}
-
 const InvisibleField = styled(TextField)`
   display: block;
   visibility: hidden;
@@ -80,177 +73,196 @@ const FormFeedback = styled('div')`
   text-align: center;
 `
 
-export default class ContactForm extends React.Component<
-  any,
-  ContactFormState
-> {
-  constructor(props: any) {
-    super(props)
-
-    this.state = { ...this.getDefaultState() }
-  }
-
-  public render() {
-    const {
-      formFields,
-      showFormContentError,
-      showFormDeliveryError,
-      showFormSuccess,
-    } = this.state
-
-    return (
-      <Segment background="#eee" name="contact">
-        <h3>Want to get in touch?</h3>
-        <form
-          name="contact-form"
-          data-netlify={true}
-          data-netlify-honeypot="honeypot"
-          onSubmit={this.handleSubmit}
-        >
-          <InvisibleField
-            id="contact-honeypot"
-            placeholder="Do not complete this field"
-            name="honeypot"
-            onChange={this.handleChange}
-            type="text"
-            value={formFields.honeypot}
-          />
-          <NameField
-            id="contact-name"
-            placeholder="Name"
-            name="name"
-            onChange={this.handleChange}
-            required={true}
-            type="text"
-            value={formFields.name}
-          />
-          <EmailField
-            id="contact-email"
-            placeholder="Email"
-            name="email"
-            onChange={this.handleChange}
-            required={true}
-            type="email"
-            value={formFields.email}
-          />
-          <TextField
-            id="contact-subject"
-            placeholder="Subject"
-            name="subject"
-            onChange={this.handleChange}
-            required={true}
-            type="text"
-            value={formFields.subject}
-          />
-          <TextField
-            id="contact-message"
-            placeholder="Message"
-            multiline={true}
-            name="message"
-            onChange={this.handleChange}
-            required={true}
-            rows={5}
-            type="text"
-            value={formFields.message}
-          />
-          <SubmitButton disabled={this.state.sendingForm} type="submit">
-            Send
-            <SubmitIcon />
-          </SubmitButton>
-        </form>
-        <FormFeedback>
-          {showFormSuccess && <span>Message sent. Thanks!</span>}
-          {showFormDeliveryError && (
-            <span>Error sending message. Please try again.</span>
-          )}
-          {showFormContentError && <span>Please complete all fields.</span>}
-          {!showFormSuccess &&
-            !showFormContentError &&
-            !showFormDeliveryError && <span>&nbsp;</span>}
-        </FormFeedback>
-      </Segment>
+function encode({ formFields }: ContactFormState): string {
+  return Object.keys(formFields)
+    .map(
+      key => `${encodeURIComponent(key)}=${encodeURIComponent(formFields[key])}`
     )
-  }
+    .join('&')
+}
 
-  private encode = ({ formFields }: ContactFormState): string => {
-    return Object.keys(formFields)
-      .map(
-        key =>
-          `${encodeURIComponent(key)}=${encodeURIComponent(formFields[key])}`
-      )
-      .join('&')
+function getDefaultState(): ContactFormState {
+  return {
+    formFields: {
+      email: '',
+      'form-name': 'contact',
+      honeypot: '',
+      message: '',
+      name: '',
+      subject: '',
+    },
+    sendingForm: false,
+    showFormContentError: false,
+    showFormDeliveryError: false,
+    showFormSuccess: false,
   }
+}
 
-  private getDefaultState(): ContactFormState {
-    return {
-      formFields: {
-        email: '',
-        'form-name': 'contact',
-        honeypot: '',
-        message: '',
-        name: '',
-        subject: '',
-      },
-      sendingForm: false,
-      showFormContentError: false,
-      showFormDeliveryError: false,
-      showFormSuccess: false,
-    }
-  }
-
-  private handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+function setupHandleChange(
+  state: ContactFormState,
+  setState: Function
+): (event: React.ChangeEvent<HTMLElement>) => void {
+  return function handleChange(
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void {
     const { name, value } = event.target
 
-    const stateUpdate: ContactFormState = {
+    const updatedState: ContactFormState = {
+      ...state,
       formFields: {
-        ...this.state.formFields,
+        ...state.formFields,
         [name]: value,
       },
     }
 
-    this.setState(stateUpdate)
+    setState(updatedState)
   }
+}
 
-  private handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+function setupHandleSubmit(
+  state: ContactFormState,
+  setState: Function
+): (event: React.FormEvent<HTMLFormElement>) => void {
+  return function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault()
 
-    const { email, message, name, subject } = this.state.formFields
+    const { email, message, name, subject } = state.formFields
     if (!email || !message || !name || !subject) {
       const stateUpdateContentError: ContactFormState = {
+        ...state,
+        formFields: {
+          ...state.formFields,
+        },
         showFormContentError: true,
       }
-      this.setState(stateUpdateContentError)
+      setState(stateUpdateContentError)
       return
     }
 
     const stateUpdateLoading: ContactFormState = {
+      ...state,
+      formFields: {
+        ...state.formFields,
+      },
       sendingForm: true,
       showFormContentError: false,
       showFormDeliveryError: false,
       showFormSuccess: false,
     }
-    this.setState(stateUpdateLoading)
+    setState(stateUpdateLoading)
 
     fetch('/', {
-      body: this.encode(this.state),
+      body: encode(state),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
     })
       .then(() => {
         const stateUpdateComplete: ContactFormState = {
-          ...this.getDefaultState(),
+          ...getDefaultState(),
           showFormSuccess: true,
         }
 
-        this.setState(stateUpdateComplete)
+        setState(stateUpdateComplete)
       })
-      .catch(error => {
+      .catch(() => {
         const stateUpdateComplete: ContactFormState = {
+          ...state,
+          formFields: {
+            ...state.formFields,
+          },
           sendingForm: false,
           showFormDeliveryError: true,
         }
 
-        this.setState(stateUpdateComplete)
+        setState(stateUpdateComplete)
       })
   }
 }
+
+function ContactComponent(): React.ReactElement {
+  const [state, setState] = React.useState(getDefaultState())
+
+  const {
+    formFields,
+    sendingForm,
+    showFormContentError,
+    showFormDeliveryError,
+    showFormSuccess,
+  } = state
+
+  return (
+    <Segment background="#eee" name="contact">
+      <h3>Want to get in touch?</h3>
+      <form
+        name="contact-form"
+        data-netlify={true}
+        data-netlify-honeypot="honeypot"
+        onSubmit={setupHandleSubmit(state, setState)}
+      >
+        <InvisibleField
+          id="contact-honeypot"
+          placeholder="Do not complete this field"
+          name="honeypot"
+          onChange={setupHandleChange(state, setState)}
+          type="text"
+          value={formFields.honeypot}
+        />
+        <NameField
+          id="contact-name"
+          placeholder="Name"
+          name="name"
+          onChange={setupHandleChange(state, setState)}
+          required={true}
+          type="text"
+          value={formFields.name}
+        />
+        <EmailField
+          id="contact-email"
+          placeholder="Email"
+          name="email"
+          onChange={setupHandleChange(state, setState)}
+          required={true}
+          type="email"
+          value={formFields.email}
+        />
+        <TextField
+          id="contact-subject"
+          placeholder="Subject"
+          name="subject"
+          onChange={setupHandleChange(state, setState)}
+          required={true}
+          type="text"
+          value={formFields.subject}
+        />
+        <TextField
+          id="contact-message"
+          placeholder="Message"
+          multiline={true}
+          name="message"
+          onChange={setupHandleChange(state, setState)}
+          required={true}
+          rows={5}
+          type="text"
+          value={formFields.message}
+        />
+        <SubmitButton disabled={sendingForm} type="submit">
+          Send
+          <SubmitIcon />
+        </SubmitButton>
+      </form>
+      <FormFeedback>
+        {showFormSuccess && <span>Message sent. Thanks!</span>}
+        {showFormDeliveryError && (
+          <span>Error sending message. Please try again.</span>
+        )}
+        {showFormContentError && <span>Please complete all fields.</span>}
+        {!showFormSuccess &&
+          !showFormContentError &&
+          !showFormDeliveryError && <span>&nbsp;</span>}
+      </FormFeedback>
+    </Segment>
+  )
+}
+ContactComponent.displayName = 'Contact'
+
+export default ContactComponent

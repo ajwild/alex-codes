@@ -38,14 +38,24 @@ const Timeline = styled('div')`
   }
 `
 
-export default ({ elements: timelineActivities }: TimelineComponentProps) => (
-  <Segment background="#ddd" width="90rem">
-    <Timeline>
-      {timelineActivities.map(activity => {
-        return (
-          <TimelineElement element={activity.node} key={activity.node.title} />
-        )
-      })}
-    </Timeline>
-  </Segment>
-)
+function TimelineComponent({
+  elements: timelineActivities,
+}: TimelineComponentProps): React.ReactElement {
+  return (
+    <Segment background="#ddd" width="90rem">
+      <Timeline>
+        {timelineActivities.map(activity => {
+          return (
+            <TimelineElement
+              element={activity.node}
+              key={activity.node.title}
+            />
+          )
+        })}
+      </Timeline>
+    </Segment>
+  )
+}
+TimelineComponent.displayName = 'Timeline'
+
+export default TimelineComponent

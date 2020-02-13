@@ -38,11 +38,16 @@ const Portrait = styled('img').attrs({ src: portraitUrl })`
   }
 `
 
-export default () => (
-  <Segment background="#fff">
-    <h1>Alex Wild</h1>
-    <Subtitle>Full Stack JS Developer</Subtitle>
-    <Subtitle>Zürich, Switzerland</Subtitle>
-    <Portrait />
-  </Segment>
-)
+function HeaderComponent(): React.ReactElement {
+  return (
+    <Segment background="#fff">
+      <h1>Alex Wild</h1>
+      <Subtitle>Full Stack JS Developer</Subtitle>
+      <Subtitle>Zürich, Switzerland</Subtitle>
+      <Portrait />
+    </Segment>
+  )
+}
+HeaderComponent.displayName = 'Header'
+
+export default HeaderComponent

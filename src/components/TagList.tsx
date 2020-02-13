@@ -20,6 +20,15 @@ const TagList = styled('ul')`
   }
 `
 
-export default ({ tags }: TagListProps) => (
-  <TagList>{tags.map(tag => <Tag key={tag} text={tag} />)}</TagList>
-)
+function TagListComponent({ tags }: TagListProps): React.ReactElement {
+  return (
+    <TagList>
+      {tags.map(tag => (
+        <Tag key={tag} text={tag} />
+      ))}
+    </TagList>
+  )
+}
+TagListComponent.displayName = 'TagList'
+
+export default TagListComponent
