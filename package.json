@@ -7,8 +7,7 @@
     "develop": "gatsby develop",
     "test": "npm lint",
     "format": "prettier --write \"src/**/*.ts*\"",
-    "lint": "eslint \"src/**/*.ts*\"",
-    "precommit": "npm format && npm test"
+    "lint": "eslint \"src/**/*.ts*\""
   },
   "dependencies": {
     "@svgr/webpack": "^5.1.0",
@@ -46,7 +45,17 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.ts*": "prettier --write"
   }
 }
