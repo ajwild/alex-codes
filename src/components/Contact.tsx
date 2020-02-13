@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
-import { MdSend as SendIcon } from 'react-icons/lib/md'
+import { MdSend as SendIcon } from 'react-icons/md'
 
 import Segment from './Segment'
 import TextField from './TextField'

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { MIN_TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import {
-  FaGraduationCap as EducationIcon,
-  FaBuildingO as WorkIcon,
-  FaCode as ProjectIcon,
-} from 'react-icons/lib/fa'
+  MdSchool as EducationIcon,
+  MdWork as WorkIcon,
+  MdCode as ProjectIcon,
+} from 'react-icons/md'
 
 import TagList from './TagList'
 
