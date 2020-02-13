@@ -1,3 +1,42 @@
+- date: May 2019 - October 2019
+  type: work
+  title: Software Developer
+  subtitle: Octave Group, Montreal
+  description:
+    Octave Group hired me as a contractor to work on the PlayNetwork platform to
+    help with preparations for the launch of Apple Music for Business. I started
+    as the only JavaScript developer in the team, and I helped with the hiring
+    of an additional two developers. My primary focus was to implement high
+    priority features to enable business growth, and to improve the stability of
+    the PlayNetwork microservices. The main features I worked on were creating a
+    new endpoint for music searches, extending an endpoint to support a new
+    track type, and rewriting an outdated microservice which used Socket.IO. To
+    improve the platform stability I fixed a number of bugs, upgraded dependency
+    versions, setup more detailed monitoring endpoints, increased unit test
+    coverage, and worked with the QA team on integration tests. I also improved
+    the performance of a few microservices by analysing their MongoDB queries
+    and then creating the correct compound indexes, or rewriting the queries in
+    an optimised way.
+  tags:
+    - GCP
+    - Node.js
+    - Koa
+    - Express
+    - Socket.IO
+    - JWT
+    - MongoDB
+    - Elasticsearch
+    - Redis
+    - EC2
+    - SNS 
+    - Mocha
+    - Sinon
+    - Chai
+    - Babel
+    - ESLint
+    - Git
+    - Docker 
+
 - date: May 2018 - December 2018
   type: work
   title: Senior JavaScript Developer
