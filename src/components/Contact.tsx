@@ -194,11 +194,12 @@ function ContactComponent(): React.ReactElement {
     <Segment background="#eee" name="contact">
       <h3>Want to get in touch?</h3>
       <form
-        name="contact-form"
+        name="contact"
         data-netlify={true}
         data-netlify-honeypot="honeypot"
         onSubmit={setupHandleSubmit(state, setState)}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <InvisibleField
           id="contact-honeypot"
           placeholder="Do not complete this field"
