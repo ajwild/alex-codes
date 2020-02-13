@@ -42,7 +42,7 @@ export default () => (
   <Segment background="#fff">
     <h1>Alex Wild</h1>
     <Subtitle>Full Stack JS Developer</Subtitle>
-    <Subtitle>Vancouver, BC, Canada</Subtitle>
+    <Subtitle>Zürich, Switzerland</Subtitle>
     <Portrait />
   </Segment>
 )

@@ -22,8 +22,7 @@
     - Pug
     - Stylus
     - Node.js
-    - Express.js
-    - Compute Engine
+    - Express
     - App Engine
     - PostgreSQL
     - MySQL
@@ -42,11 +41,11 @@
   type: project
   title: I Challenge...
   description:
-    I created a website
-    ([ichallenge.club](https://www.ichallenge.club/{target_blank})) which
-    integrates with the Strava API and allows users and clubs to set running and
-    cycling goals. The primary aim of developing this website was to learn new
-    frameworks and improve my knowledge of the AWS ecosystem.
+    I created a website that integrated with the Strava API, which allowed users
+    and clubs to set running and cycling goals. The primary aim of developing
+    this website was to learn new frameworks and technologies, such as React,
+    GraphQL and Serverless. I also wanted to spend some time improving my
+    knowledge of the AWS ecosystem.
   tags:
     - AWS
     - React
@@ -77,19 +76,19 @@
     interface for the Graasp platform
     ([graasp.eu](http://graasp.eu/{target_blank})). I also had to modify the
     website so that it could be used by Doctors Without Borders Geneva. I
-    quickly transitioned into a full stack role and took on further
-    responsibilities, including updating and optimising the SpeakUp web app
-    ([speakup.info](http://speakup.info/{target_blank})). Alongside the
-    development work I would mentor students and interns, review the code of
-    team members, and provide time estimates for development work. There were
-    also a number of Linux and Mac system administration tasks, including
-    migrating the services to new rack servers.
+    quickly transitioned into a full stack role, becoming the lead developer and
+    taking on further responsibilities, including updating and optimising the
+    SpeakUp web app ([speakup.info](http://speakup.info/{target_blank})).
+    Alongside the development work I would mentor students and interns, review
+    the code of team members, and provide time estimates for development work.
+    There were also a number of Linux and Mac system administration tasks,
+    including migrating the services to new rack servers.
   tags:
     - AngularJS
     - Pug
     - Stylus
     - Node.js
-    - Express.js
+    - Express
     - Socket.IO
     - JWT
     - OAuth 2
@@ -188,6 +187,12 @@
   title: "BSc (Hons): Media Production and Technology"
   subtitle: University of Central Lancashire, Preston
   description:
-    My course covered a variety of subjects including web development, graphic
-    design, video editing, video production, and audio production. I wrote my
-    dissertation on CSS design and cross-browser compatibility.
+    At university I completed a Bachelor of Science degree in Media Production
+    and Technology with first-class honours. The course covered a variety of
+    subjects including web development, graphic design, video editing, video
+    production, and audio production. I would regularly use Adobe Creative Suite
+    applications to complete assignments, along with a variety of other industry
+    specific software. I wrote my dissertation on CSS design and cross-browser
+    compatibility, which involved designing a website and then using a range of
+    browser specific hacks to make it appear identical in 20+ browsers
+    (including IE5!).
