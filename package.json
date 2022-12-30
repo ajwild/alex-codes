@@ -10,8 +10,8 @@
     "lint": "eslint \"src/**/*.ts*\""
   },
   "dependencies": {
-    "@svgr/webpack": "^5.1.0",
-    "gatsby": "^2.19.16",
+    "@svgr/webpack": "^5.5.0",
+    "gatsby": "^5.3.3",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-google-analytics": "^2.1.35",
     "gatsby-plugin-react-helmet": "^3.1.22",
